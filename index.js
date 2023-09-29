@@ -6,9 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(router)
 
-app.get('/', (req, res) => {
-    res.json({ message: 'I am alive!' });
-});
+router.get('/', todoController.home)
 
 router.get('/todo', todoController.getTodoList)
 
