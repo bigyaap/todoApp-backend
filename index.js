@@ -9,4 +9,10 @@ app.get('/', (req, res) => {
     res.json({ message: 'I am alive!' });
 });
 
+router.get('/todo', todoController.getTodoList)
+
+router.post('/todo', todoController.createList)
+
+router.delete('/todo', todoController.deleteOneTodo)
+
 app.listen(8080, () => console.log('Server listening on port 8080'))
