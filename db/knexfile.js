@@ -7,32 +7,46 @@ const { db_dev, db, db_dev_user, db_dev_pass } = require("../utils/config");
  */
 module.exports = {
     development: {
-        client: 'postgresql',
+        client: 'pg',
         connection: {
-            database: db_dev,
-            user: db_dev_user,
-            password: db_dev_pass
+            connectionString: 'postgres://mvdcpmhr:fbq0hRVkIRIvYIJwvbAPPgW41aFYvpYS@john.db.elephantsql.com/mvdcpmhr',
+            ssl: { rejectUnauthorized: false }, // Required for ElephantSQL
         },
-        pool: {
-            min: 2,
-            max: 10
-        },
-        migrations: {
-            tableName: 'knex_migrations'
-        }
     },
+    // development: {
+    //     client: 'postgresql',
+    //     connection: {
+    //         database: db_dev,
+    //         user: db_dev_user,
+    //         password: db_dev_pass
+    //     },
+    //     pool: {
+    //         min: 2,
+    //         max: 10
+    //     },
+    //     migrations: {
+    //         tableName: 'knex_migrations'
+    //     }
+    // },
+    // production: {
+    //     client: 'pg', // Use the PostgreSQL client
+    //     connection: {
+    //         connectionString: db, // ElephantSQL connection string
+    //         ssl: { rejectUnauthorized: false }, // Enable SSL for secure connections
+    //     },
+    //     pool: {
+    //         min: 2, // Minimum number of database connections
+    //         max: 10, // Maximum number of database connections
+    //     },
+    //     migrations: {
+    //         directory: './migrations', // Directory for migration files
+    //     },
+    // },
     production: {
-        client: 'pg', // Use the PostgreSQL client
+        client: 'pg',
         connection: {
-            connectionString: db, // ElephantSQL connection string
-            ssl: { rejectUnauthorized: false }, // Enable SSL for secure connections
-        },
-        pool: {
-            min: 2, // Minimum number of database connections
-            max: 10, // Maximum number of database connections
-        },
-        migrations: {
-            directory: './migrations', // Directory for migration files
+            connectionString: 'postgres://mvdcpmhr:fbq0hRVkIRIvYIJwvbAPPgW41aFYvpYS@john.db.elephantsql.com/mvdcpmhr',
+            ssl: { rejectUnauthorized: false }, // Required for ElephantSQL
         },
     },
 };
