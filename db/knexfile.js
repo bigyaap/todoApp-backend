@@ -1,4 +1,4 @@
-// Update with your config settings.
+// config settings.
 
 const { db_dev, db, db_dev_user, db_dev_pass } = require("../utils/config");
 
