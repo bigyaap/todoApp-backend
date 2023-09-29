@@ -2,6 +2,15 @@ const todoService = require('../service/todo')
 
 class ListController {
 
+    home(req, res) {
+        try {
+            res.status(200).json({ message: 'I am alive' })
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({ error })
+        }
+    }
+
     async getTodoList(req, res) {
         try {
             const id = await todoService.getTodoList()
