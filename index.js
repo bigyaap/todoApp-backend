@@ -1,6 +1,6 @@
 const express = require('express')
 const router = require('./routes')
-const todoController = require('../controller/listController')
+const todoController = require('./controller/listController')
 
 const app = express()
 app.use(express.json())
